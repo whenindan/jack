@@ -2,6 +2,11 @@
 
 A self-contained job board built with Next.js (App Router), TypeScript, Tailwind CSS, TanStack Query, and Supabase.
 
+## Data Layer Choice
+**Selected Option:** C) Supabase (Stretch Goal)
+**Why:** I chose Supabase because I have had extensive experience using it in past applications. I find it exceptionally easy to manage databases via their dashboard, and its performance is fast enough for production-ready apps. Additionally, its built-in support for authentication and Row Level Security (RLS) makes it a robust choice for any project that might scale beyond a simple demo.
+
+
 ## Getting started
 
 ```bash
@@ -15,14 +20,6 @@ Open [http://localhost:3000](http://localhost:3000).
 ---
 
 ## Supabase setup
-
-### 1. Create a project
-
-Go to [supabase.com](https://supabase.com), create a new project, and wait for it to be ready.
-
-### 2. Create the table
-
-Run this in the **SQL Editor** (Database → SQL Editor → New query):
 
 ```sql
 create table jobs (
@@ -43,7 +40,6 @@ create table jobs (
 );
 ```
 
-### 3. Enable RLS and add policies
 
 ```sql
 alter table jobs enable row level security;
@@ -55,7 +51,6 @@ create policy "anon can insert" on jobs for insert with check (true);
 create policy "anon can update" on jobs for update using (true);
 ```
 
-### 4. Seed the initial jobs
 
 ```sql
 insert into jobs (title, company, location, description, url, salary, type, posted_at, is_user_added) values
