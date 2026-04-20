@@ -8,6 +8,7 @@ import {
   Briefcase,
   TrendingUp,
   Zap,
+  Banknote,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -104,20 +105,12 @@ export function JobCard({ job, viewMode, onClick }: JobCardProps) {
         <div className="mb-5 flex flex-wrap gap-2.5 text-[12px] font-bold text-neutral-700 dark:text-neutral-300">
           {job.salary ? (
             <span className="flex items-center gap-2 rounded bg-[#f3f4f6] dark:bg-neutral-800 px-3 py-1.5 tracking-tight border border-transparent dark:border-neutral-700">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-500 dark:text-neutral-400">
-                <rect width="20" height="12" x="2" y="6" rx="2" />
-                <circle cx="12" cy="12" r="2" />
-                <path d="M6 12h.01M18 12h.01" />
-              </svg>
+              <Banknote size={14} className="text-neutral-500 dark:text-neutral-400" />
               {job.salary}
             </span>
           ) : (
             <span className="flex items-center gap-2 rounded bg-[#f3f4f6] dark:bg-neutral-800 px-3 py-1.5 tracking-tight border border-transparent dark:border-neutral-700">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-500 dark:text-neutral-400">
-                <rect width="20" height="12" x="2" y="6" rx="2" />
-                <circle cx="12" cy="12" r="2" />
-                <path d="M6 12h.01M18 12h.01" />
-              </svg>
+              <Banknote size={14} className="text-neutral-500 dark:text-neutral-400" />
               Salary Not Listed
             </span>
           )}
